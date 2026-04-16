@@ -29,7 +29,7 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4"
 >
   <nav
-    class="header-nav flex gap-x-1 px-4 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center border border-transparent"
+    class="header-nav flex gap-x-1 px-4 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center border border-transparent dark:bg-gray-900/80 bg-white/60"
   >
     {
       navItems.map((link) => (
@@ -98,20 +98,22 @@ const navItems = [
     animation-range: 0 100px;
   }
 
-  .header-nav {
-    @apply dark:bg-gray-900/80 bg-white/60;
-  }
-
   .nav-link.text-yellow-500 {
-    @apply font-semibold;
+    font-weight: 600;
   }
 
   @keyframes nav-appear {
     0% {
-      @apply dark:bg-gray-900/0 bg-white/0 border-transparent shadow-none;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur-md ring-white/10 dark:ring-white/5 border-gray-200/20 dark:border-white/5;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      backdrop-filter: blur(12px);
+      border-color: rgba(229, 231, 235, 0.2);
     }
   }
+
+  /* Handle dark mode properties manually inside the keyframes if needed, but usually just variables */
 </style>
