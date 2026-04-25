@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/space-grotesk-variable.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Roboto";
@@ -35,7 +41,7 @@
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Roboto", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
 
   --s-0: 0;
   --s-1: 4px;
@@ -292,7 +298,7 @@ img {
   width: 18px;
   height: 18px;
   position: absolute;
-  transition: scale var(--dur) var(--ease);
+  transition: opacity var(--dur) var(--ease);
 }
 
 .theme-toggle__menu {
@@ -348,27 +354,27 @@ img {
 
 .hero-avatar-wrap {
   position: relative;
-  width: 84px;
-  height: 84px;
+  width: 88px;
+  height: 88px;
   flex-shrink: 0;
+  transform: rotate(-5deg);
+  box-shadow: 3px 3px 0 0 var(--ink);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 
-.hero-avatar-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  filter: blur(18px);
-  background: color-mix(in srgb, var(--accent) 45%, transparent);
-  transform: scale(1.22);
+.hero-avatar-wrap:hover {
+  transform: rotate(0deg) translate(3px, 3px);
+  box-shadow: none;
 }
 
 .hero-avatar {
-  position: relative;
+  display: block;
   width: 100%;
   height: 100%;
-  border-radius: 999px;
+  border-radius: 0;
   object-fit: cover;
-  border: 2px solid color-mix(in srgb, var(--accent) 45%, var(--rule));
+  object-position: top;
+  border: 5px solid #fff;
 }
 
 .hero-badge-link {
@@ -539,9 +545,16 @@ img {
 }
 
 .project-media {
-  border: var(--stroke) solid var(--rule-strong);
+  border: 2px solid var(--ink);
   overflow: hidden;
   background: var(--bg-soft);
+  box-shadow: 3px 3px 0 0 var(--ink);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.project-media:hover {
+  transform: translate(3px, 3px);
+  box-shadow: none;
 }
 
 .project-media img {
@@ -549,6 +562,11 @@ img {
   height: 100%;
   min-height: 260px;
   object-fit: cover;
+  transition: transform 500ms var(--ease);
+}
+
+.project-media:hover img {
+  transform: scale(1.09);
 }
 
 .project-media-image {
@@ -725,8 +743,16 @@ img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: var(--stroke-2) solid var(--rule-strong);
+  border: 5px solid #fff;
   background: var(--bg-alt);
+  transform: rotate(4deg);
+  box-shadow: 3px 3px 0 0 var(--ink);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.about-image:hover {
+  transform: rotate(0deg) translate(3px, 3px);
+  box-shadow: none;
 }
 
 .site-footer {
@@ -816,11 +842,13 @@ img {
   from {
     border-color: transparent;
     box-shadow: none;
+    transform: translateY(0);
   }
 
   to {
     border-color: var(--ink);
-    box-shadow: 3px 3px 0 0 var(--ink);
+    box-shadow: 4px 4px 0 0 var(--ink);
+    transform: translate(-4px, -4px);
   }
 }
 

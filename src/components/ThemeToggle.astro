@@ -46,7 +46,7 @@ const THEMES = ["Light", "Dark", "System"];
     document
       .querySelectorAll<HTMLElement>(".theme-toggle-icon")
       .forEach((element) => {
-        element.style.scale = element.id === themePreference ? "1" : "0";
+        element.style.opacity = element.id === themePreference ? "1" : "0";
       });
   };
 

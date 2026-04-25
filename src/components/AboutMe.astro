@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const personalImageAlt = "Miguel Ángel";
 ---
 
@@ -26,9 +27,9 @@ const personalImageAlt = "Miguel Ángel";
     </p>
   </div>
 
-  <img
-    width="200"
-    height="200"
+  <Image
+    width={1104}
+    height={276}
     src="/daniel.webp"
     alt={personalImageAlt}
     class="about-image"

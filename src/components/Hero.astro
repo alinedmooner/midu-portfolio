@@ -1,5 +1,6 @@
 ---
 const personalImageAlt = "Miguel Ángel";
+import { Image } from "astro:assets";
 import Badge from "@/components/Badge.astro";
 import GitLabIcon from "@/components/icons/GitLab.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
@@ -10,8 +11,7 @@ import SocialPill from "@/components/SocialPill.astro";
 <div class="hero">
   <div class="hero-top anim-fade-in">
     <div class="hero-avatar-wrap">
-      <div class="hero-avatar-glow" aria-hidden="true"></div>
-      <img class="hero-avatar" src="/me.webp" alt={personalImageAlt} />
+      <Image class="hero-avatar" src="/me.webp" alt={personalImageAlt} width={400} height={400} loading="eager" />
     </div>
     <a
       href="https://linkedin.com/in/alinedmooner"
@@ -27,7 +27,7 @@ import SocialPill from "@/components/SocialPill.astro";
     <span id="greeting">Hola</span>, soy <span class="hero-name">Daniel</span>
   </h1>
 
-  <p class="hero-copy anim-fade-in anim-delay-2">
+  <p class="hero-copy">
     <strong>Desarrollador de software</strong> con más de 5 años de experiencia en
     <strong>desarrollo web full stack</strong>, ubicado en Bogotá, Colombia 🇨🇴.
     Docente particular y entusiasta de la accesibilidad en todo tipo de

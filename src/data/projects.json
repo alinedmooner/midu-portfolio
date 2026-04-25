@@ -1,7 +1,7 @@
 [
   {
     "title": "Ukumari",
-    "description": "Ganador del primer lugar en la Hackathon CiberPaz 2025 en Bogotá. Extensión de Chrome construida con Vanilla JS para ayudar a usuarios de la web.",
+    "description": "Ganador del primer lugar en la Hackathon CiberPaz 2025 en Bogotá. Extensión de Chrome construida con Vanilla JS para ayudar a usuarios de la web. Disponible y publicada en la Chrome Web Store.",
     "link": "https://ukumari-web.netlify.app/",
     "github": "https://github.com/alinedmooner/ukumari",
     "store": "https://chromewebstore.google.com/detail/ukumari/jhbegfenmaoobejkpmcppaacjkjjomog",
